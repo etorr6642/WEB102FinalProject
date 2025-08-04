@@ -45,19 +45,21 @@ const ReadPosts = (props) => {
         <>
         {/* sort buttons */}
         <div className='sortButtons'>
-            <button onClick={() => handleSort("created_at")}>
+            <button className='sortTime' onClick={() => handleSort("created_at")}>
                 Sort by Time ({sortOrder === "asc" && sortField === "created_at" ? "Oldest" : "Newest"})
             </button>
 
-            <button onClick={() => handleSort("likeCount")}>
+            <button classname='sortLike' onClick={() => handleSort("likeCount")}>
                 Sort by Likes ({sortOrder === "asc" && sortField === "likeCount" ? "Least" : "Most"})
             </button>
+
+            <div className ="searchBar">
+                <input type="text" placeholder="Search by topic.." value ={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)}/>
+            </div>
         </div>
 
         {/* search bar */}
-        <div className ="searchBar">
-            <input type="text" placeholder="Search by topic.." value ={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)}/>
-        </div>
+        
         
         {/* make card for each post based on searchQuery */}
         <div className="ReadPosts">

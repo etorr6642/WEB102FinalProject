@@ -31,27 +31,23 @@ const PostDetails = () => {
         if (id) fetchPost();
     }, [id]);
 
-    //show if page is loading
-    if (loading) return <p>Loading...</p>;
+    
 
-    //show if post was not found
-    if (!post) return <p>No Post found.</p>;
+    // Fetch comments
+    useEffect(() => {
+        const fetchComments = async () => {
+        const { data, error } = await supabase
+            .from('Comments')
+            .select()
+            .eq('post_id', id)
+            .order('created_at', { ascending: false });
 
-    // // Fetch comments
-    // useEffect(() => {
-    //     const fetchComments = async () => {
-    //     const { data, error } = await supabase
-    //         .from('Comments')
-    //         .select()
-    //         .eq('post_id', id)
-    //         .order('created_at', { ascending: false });
+        if (error) console.error(error);
+        else setComments(data);
+        };
 
-    //     if (error) console.error(error);
-    //     else setComments(data);
-    //     };
-
-    //     if (id) fetchComments();
-    // }, [id]);
+        if (id) fetchComments();
+    }, [id]);
 
     //add comment to database
     const handleAddComment = async (e) =>{
@@ -61,16 +57,21 @@ const PostDetails = () => {
         const {data, error}=await supabase
         .from ("Comments")
         .insert([{comment:newComment,post_id: id}])
+        .select();
 
         if (error){
             console.error(error)
-        }else{
-            setComments([data[0],...comments]);
+        }else if (data && data.length >0){
+            setComments([data[0], ...comments]);
             setNewComment("");
         }
-    }
+    };
   
+    //show if page is loading
+    if (loading) return <p>Loading...</p>;
 
+    //show if post was not found
+    if (!post) return <p>No Post found.</p>;
   
   return (
     <div >
@@ -138,7 +139,7 @@ const PostDetails = () => {
           {comments.length > 0 ? (
             comments.map(comment => (
               <li key={comment.id} style={{ marginTop: '1rem', borderBottom: '1px solid #ddd' }}>
-                <p>{comment.content}</p>
+                <p>{comment.comment}</p>
                 <small>{new Date(comment.created_at).toLocaleString()}</small>
               </li>
             ))

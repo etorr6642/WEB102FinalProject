@@ -5,5 +5,27 @@
     gap: 30px;
 }
 
+.sortButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* spacing between buttons and search bar */
+  margin-bottom: 1rem; /* spacing from content below */
 
+}
+
+.sortButtons button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.searchBar input {
+  padding: 1 rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sortLike .sortTime{
+    
+}
 
