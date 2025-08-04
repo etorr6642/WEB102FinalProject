@@ -57,7 +57,7 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  flex-wrap: wrap; /* allows wrapping if content is long */
+  flex-wrap: wrap; 
   margin-bottom: 0.5rem;
 }
 
@@ -68,4 +68,8 @@ a {
 .postDetails p {
   margin: 0;
   font-weight: normal;
+}
+
+button{
+  background-color: rgb(242, 92, 84);
 }

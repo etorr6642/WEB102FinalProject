@@ -117,6 +117,7 @@ const PostDetails = () => {
       <Link to="/">
         <button>Back to Posts</button>
       </Link>
+      
 
       {/* Comment section */}
       <div className="comments-section">
