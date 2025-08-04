@@ -74,7 +74,7 @@ const PostDetails = () => {
     if (!post) return <p>No Post found.</p>;
   
   return (
-    <div >
+    <div className ='wholeDetails' >
       <div className="imageContainer">
        
           <img
