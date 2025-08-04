@@ -47,3 +47,25 @@ button {
 button:hover {
   border-color: #646cff;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.postDetails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* allows wrapping if content is long */
+  margin-bottom: 0.5rem;
+}
+
+.postDetails h2, .postDetails h3 {
+  margin: 0;
+}
+
+.postDetails p {
+  margin: 0;
+  font-weight: normal;
+}

@@ -23,8 +23,13 @@ const Card = (props) =>  {
   return (
       <div className="Card">
           <Link to={'edit/'+ props.id}><img className="moreButton" alt="edit button" src={more} /></Link>
-          <h2 className="topic">{"Topic: " + props.topic}</h2>
-          <p className ="creation_time">Posted at: {new Date(props.created_at).toLocaleString()}</p>
+          <div>
+            <Link to={`/summary/${props.id}`}>
+              <h2 className="topic">{"Topic: " + props.topic}</h2>
+              <p className ="creation_time">Posted at: {new Date(props.created_at).toLocaleString()}</p>
+            </Link>
+          </div>
+          
           <button className="likeButton" onClick={updateCount} >👍 Like Count: {count}</button>
       </div>
   );

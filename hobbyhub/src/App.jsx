@@ -5,6 +5,7 @@ import ReadPosts from './pages/ReadPosts'
 import CreatePost from './pages/CreatePost'
 import EditPost from './pages/EditPost'
 import { Link } from 'react-router-dom'
+import PostDetails from './pages/PostDetails';
 
 
 const App = () => {
@@ -22,6 +23,10 @@ const App = () => {
     {
       path:"/new",
       element: <CreatePost />
+    },
+    {
+      path: "/summary/:id",
+      element: <PostDetails/>
     }
   ]);
 

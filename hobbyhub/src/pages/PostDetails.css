@@ -1,0 +1,36 @@
+.postDetails {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* allows wrapping if content is long */
+  margin-bottom: 0.5rem;
+  padding: 20px;
+}
+
+.postDetails h2, .postDetails h3 {
+  margin: 0;
+}
+
+.postDetails p {
+  margin: 0;
+  font-weight: normal;
+}
+
+.comments-section {
+  margin-top: 2rem;
+}
+
+.comments-section textarea {
+  resize: vertical;
+}
+
+.comments-section button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background-color: #f25c54;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
