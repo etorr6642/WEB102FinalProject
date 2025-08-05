@@ -39,8 +39,8 @@ const EditPost = ({data}) => {
     const updatePost = async (event) => {
         event.preventDefault();
 
-        if (!post.topic || !post.anime_title || !post.arc_season || !post.episode_num) {
-            alert("Please fill out all fields before submitting.")
+        if (!post.topic) {
+            alert("Please fill out Topic before submitting.")
             return
         }
 

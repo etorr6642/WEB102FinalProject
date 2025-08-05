@@ -75,7 +75,9 @@ const PostDetails = () => {
   
   return (
     <div className ='wholeDetails' >
-      <div className="imageContainer">
+
+      {post.image&&(
+        <div className="imageContainer">
        
           <img
             src={post.image}
@@ -85,30 +87,43 @@ const PostDetails = () => {
         
       </div>
 
+
+      )}
+      
+
       <div className='postDetails'>
         <h3 className="topic">Topic: </h3> 
         <p>{post.topic}</p>
       </div>
 
-      <div className='postDetails'>
+      {post.anime_title &&(
+        <div className='postDetails'>
         <h3>Anime: </h3> 
         <p>{post.anime_title}</p>
       </div>
-
-      <div className='postDetails'>
+      )}
+      
+      {post.arc_season&&(
+        <div className='postDetails'>
         <h3>Arc/Season: </h3> 
         <p>{post.arc_season}</p>
-      </div>
-
-      <div className='postDetails'>
+        </div>
+      )}
+      
+      {post.episode_num !==0 &&(
+        <div className='postDetails'>
         <h3>Episode: </h3> 
         <p>{post.episode_num}</p>
-      </div>
-
-      <div className='postDetails'>
+        </div>
+      )}
+      
+      {post.details &&(
+        <div className='postDetails'>
         <h3>Details: </h3> 
         <p>{post.details}</p>
-      </div>
+        </div>
+      )}
+      
       
       
       <Link to={`/edit/${post.id}`}>

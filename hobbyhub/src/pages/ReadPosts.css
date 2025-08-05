@@ -29,3 +29,10 @@
   border-radius: 4px;
   border: 1px solid #ccc;
 }
+
+h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;  /* ensures long words break */
+    word-break: break-word;     /* break long words in all browsers */
+    box-sizing: border-box;
+}
