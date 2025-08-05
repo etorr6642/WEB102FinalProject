@@ -20,17 +20,23 @@ const CreatePost = () => {
     const createPost = async (event) => {
         event.preventDefault();
 
-        if (!post.topic || !post.anime_title || !post.arc_season || !post.episode_num) {
-            alert("Please fill out all fields before submitting.")
+        if (!post.topic) {
+            alert("Please fill out Topic field before submitting.")
             return
         }
 
         await supabase
             .from('Posts')
-            .insert({anime_title: post.anime_title, arc_season: post.arc_season,  topic: post.topic, episode_num: post.episode_num, details: post.details})
+            .insert({anime_title: post.anime_title, arc_season: post.arc_season,  topic: post.topic, episode_num: Number(post.episode_num), details: post.details, image:post.image})
             .select();
 
         window.location = "/";
+
+        if(error){
+            console.error("Supabase insert error: ", error);
+            alert ("There was an error");
+            return;
+        }
     }
 
     return (
@@ -40,8 +46,8 @@ const CreatePost = () => {
                 <input type="text" id="topic" name="topic" onChange={handleChange} /><br />
                 <br/>
 
-                <label htmlFor="Image">Image: </label> <br />
-                <input type="text" id="Image" name="Image" onChange={handleChange} /><br />
+                <label htmlFor="image">Image: </label> <br />
+                <input type="text" id="image" name="image" onChange={handleChange} /><br />
                 <br/>
 
                 <label htmlFor="anime_title">Anime Name: </label><br />
@@ -60,7 +66,7 @@ const CreatePost = () => {
                 <textarea rows="5" cols="50" id="details" name="details" onChange={handleChange} >
                 </textarea>
                 <br/>
-                <input type="submit" value="Submit" onClick={createPost} />
+                <button type="submit" onClick={createPost}>Submit</button>
             </form>
         </div>
     )
