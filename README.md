@@ -78,7 +78,7 @@ GIF created with ScreenToGif
 
 ## Notes
 
-The challenges with this app was the design. I have a lot of trouble "making things pretty" and I tend to focus on the functional part of a design. I ended up using a previous lab/project as a base for my app and designed it as needed. Most projects/labs had example of what I needed to implement so the execution was fairly easy.
+The challenges with this app was the design. I have a lot of trouble "making things pretty" and I tend to focus on the functional part of a design. I ended up using a previous lab/project as a base for my app and designed it as needed. Most projects/labs had example of what I needed to implement so the execution was fairly easy. I wanted to implement so much more but I ran out of time due to other classwork. 
 
 ## License
 

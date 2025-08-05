@@ -97,19 +97,11 @@ const PostDetails = () => {
             src={post.image}
             alt={post.anime_title + ' icon'}
             className="animeImage"
-          />
-
-          <div className='postDetails'>
-        <h3>Likes: </h3>
-        <p>{post.likeCount || 0}</p>
-        <button onClick={handleLike}>👍 Like</button>
+          />      
       </div>
-        
-      </div>
-
-
       )}
-      
+
+       
 
       <div className='postDetails'>
         <h3 className="topic">Topic: </h3> 
@@ -143,6 +135,12 @@ const PostDetails = () => {
         <p>{post.details}</p>
         </div>
       )}
+
+      <div className='postDetails'>
+        <h3>Likes: </h3>
+        <p>{post.likeCount || 0}</p>
+        <button onClick={handleLike}>👍 Like</button>
+      </div>
       
       
       
