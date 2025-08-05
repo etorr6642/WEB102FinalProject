@@ -66,6 +66,20 @@ const PostDetails = () => {
             setNewComment("");
         }
     };
+
+    const handleLike = async () => {
+      const { data, error } = await supabase
+        .from('Posts')
+        .update({ likeCount: post.likeCount + 1 })
+        .eq('id', post.id)
+        .select();
+
+      if (error) {
+        console.error('Error updating like count:', error);
+      } else if (data && data.length > 0) {
+        setPost(data[0]);  // Update local state with new like count
+      }
+    };
   
     //show if page is loading
     if (loading) return <p>Loading...</p>;
@@ -84,6 +98,12 @@ const PostDetails = () => {
             alt={post.anime_title + ' icon'}
             className="animeImage"
           />
+
+          <div className='postDetails'>
+        <h3>Likes: </h3>
+        <p>{post.likeCount || 0}</p>
+        <button onClick={handleLike}>👍 Like</button>
+      </div>
         
       </div>
 
@@ -129,9 +149,9 @@ const PostDetails = () => {
       <Link to={`/edit/${post.id}`}>
         <button>Edit Post</button>
       </Link>
-      <Link to="/">
-        <button>Back to Posts</button>
-      </Link>
+    
+
+     
       
 
       {/* Comment section */}

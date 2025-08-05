@@ -2,9 +2,9 @@
 
 Submitted by: **Edward Torres**
 
-This web app: **insert description**
+This web app: **This app is a community forum where users can create posts about the most eventful scenes from an anime. The user can create, update, and delete a post. Post can consist of a topic only or the user can add other details such an image, season, episode number, etc. User can also comment on a post and like a post from the homepage or the post details page**
 
-Time spent: **6** hours spent in total
+Time spent: **7** hours spent in total
 
 ## Required Features
 
@@ -72,19 +72,17 @@ Here's a walkthrough of implemented user stories:
 <img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with ScreenToGif
+
+
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The challenges with this app was the design. I have a lot of trouble "making things pretty" and I tend to focus on the functional part of a design. I ended up using a previous lab/project as a base for my app and designed it as needed. Most projects/labs had example of what I needed to implement so the execution was fairly easy.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2025 Edward Torres
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
